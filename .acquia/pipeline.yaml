@@ -64,6 +64,7 @@ _orca_steps: &orca_steps
     - setup_ramfs:
       - cp -ar /acquia /ramfs  &&  df -hT
     - before_install:
+      - cd /ramfs${CI_WORKSPACE}
       - ../orca/bin/ci/before_install.sh
     - |
       cd /ramfs${CI_WORKSPACE}
