@@ -28,6 +28,13 @@ ARG BASE_IMAGE=devops-orca-container:latest
 # Jfrog is used by default in REPO_LOCATION
 # Solving dockerhub rate limiting and improving security scanning
 ARG REPO_LOCATION
+
+# Specify the version of ORCA to use. Use dev-master to track the latest
+# release, dev-develop to track Dev/HEAD, or any other Composer version
+# string.
+# @see https://getcomposer.org/doc/articles/versions.md
+ARG ORCA_VERSION=dev-wip
+
 FROM ${REPO_LOCATION}${BASE_IMAGE}
 
 ENV CI=true
@@ -45,11 +52,7 @@ ENV ORCA_SUT_NAME=drupal/acquia_lift
 # ancestor of a topic branch.
 # @todo change to your branch!
 ENV ORCA_SUT_BRANCH=8.x-3.x
-# Specify the version of ORCA to use. Use dev-master to track the latest
-# release, dev-develop to track Dev/HEAD, or any other Composer version
-# string.
-# @see https://getcomposer.org/doc/articles/versions.md
-ENV ORCA_VERSION=^3
+
 # If you want to completely replace the list of packages ORCA installs in
 # fixtures and runs tests on, you can specify your own packages file at
 # runtime by uncommenting the following line. Acceptable values are any
