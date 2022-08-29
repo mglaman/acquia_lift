@@ -67,7 +67,7 @@ ENV ORCA_SUT_BRANCH=8.x-3.x
 # uncommenting the following line and specifying your own alter file.
 # @see https://github.com/acquia/orca/blob/master/docs/advanced-usage.md#ORCA_PACKAGES_CONFIG_ALTER
 # @todo remove, or point to your own to register your pacakge.
-# ENV ORCA_PACKAGES_CONFIG_ALTER=../orca/example/tests/packages_alter.yml
+ENV ORCA_PACKAGES_CONFIG_ALTER=../acquia_lift/.acquia/packages_alter.yml
 #
 # If your package is a Drupal installation profile, uncomment the following
 # line and specify its machine name.
